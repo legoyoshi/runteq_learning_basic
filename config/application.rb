@@ -27,6 +27,14 @@ module RunteqNormal
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    #rails generate実行時に以下のファイルを自動生成しない
+    config.generators do |g|
+      g.assets false          # assetsを生成しない
+      g.helper false         # helperを生成しない
+      g.skip_routes true      # routes.rbを変更しない
+      g.test_framework false  # テストスクリプトを生成しない
+    end
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
