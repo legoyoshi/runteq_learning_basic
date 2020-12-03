@@ -13,3 +13,9 @@ ja:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
+  flash:
+    login_success: 'ログインしました'
+    login_failed: 'ログインに失敗しました'
+    logout_success: 'ログアウトしました'
+    register_success: 'ユーザー登録が完了しました'
+    register_failed: 'ユーザー登録に失敗しました'

@@ -6,15 +6,15 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to(root_path, success: 'Successfully logged in!')
+      redirect_back_or_to(root_path, success: (t 'flash.login_success') )
     else
-      flash.now[:danger] = 'Invalid email/password combination' # 本当は正しくない
+      flash.now[:danger] = t 'flash.login_failed'
       render 'new'
     end
   end
 
   def destroy
     logout
-    redirect_to root_path
+    redirect_back_or_to(root_path, success: (t 'flash.logout_success') )
   end
 end
