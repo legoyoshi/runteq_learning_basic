@@ -14,8 +14,19 @@ ja:
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
   flash:
+    login_request: 'ログインしてください'
     login_success: 'ログインしました'
     login_failed: 'ログインに失敗しました'
     logout_success: 'ログアウトしました'
     register_success: 'ユーザー登録が完了しました'
     register_failed: 'ユーザー登録に失敗しました'
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      short: "%y/%m/%d %H:%M"

@@ -27,6 +27,9 @@ module RunteqNormal
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    config.time_zone = 'Asia/Tokyo'
+    config.active_record.default_timezone = :local
+
     # rails generate実行時に以下のファイルを自動生成しない
     config.generators do |g|
       g.assets false # assetsを生成しない
