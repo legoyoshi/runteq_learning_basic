@@ -8,6 +8,7 @@ class BoardsController < ApplicationController
 
   def login_check
     return unless current_user.nil?
-      redirect_back_or_to(login_path, danger: (t 'flash.login_request'))
+
+    redirect_back_or_to(login_path, danger: (t 'flash.login_request'))
   end
 end
