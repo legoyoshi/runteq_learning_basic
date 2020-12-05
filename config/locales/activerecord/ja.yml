@@ -3,6 +3,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      board: '掲示板'
     attributes:
       user:
         last_name: '姓'
@@ -10,3 +11,6 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+      board:
+        title: 'タイトル'
+        body: '本文'

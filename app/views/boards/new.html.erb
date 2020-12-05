@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1><%= t '.title' %></h1>
+      <%= form_with(model: @board, local: true) do |f| %>
+
+        <div class="form-group">
+          <%= f.label :title, Board.human_attribute_name(:title) %>
+          <%= f.text_field :title, class: 'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= f.label :body, Board.human_attribute_name(:body) %>
+          <%= f.text_area :body, class: 'form-control', row: '10', style: 'height: 200px'%>
+        </div>
+        <%= f.submit (t 'defaults.create'), class: "btn btn-primary", data: { disable_with: (t 'defaults.create')} %>
+      <% end %>
+    </div>
+  </div>
+</div>

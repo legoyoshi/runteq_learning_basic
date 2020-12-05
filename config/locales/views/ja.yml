@@ -4,6 +4,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    create: '作成'
   users:
     new:
       title: 'ユーザー登録'
@@ -13,6 +14,9 @@ ja:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
+  boards:
+    new:
+      title: '掲示板作成'
   flash:
     login_request: 'ログインしてください'
     login_success: 'ログインしました'
@@ -20,11 +24,8 @@ ja:
     logout_success: 'ログアウトしました'
     register_success: 'ユーザー登録が完了しました'
     register_failed: 'ユーザー登録に失敗しました'
-  date:
-    formats:
-      default: "%Y/%m/%d"
-      long: "%Y年%m月%d日(%a)"
-      short: "%m/%d"
+    board_create_success: '掲示板を作成しました'
+    board_create_failed: '掲示板を作成できませんでした'
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
