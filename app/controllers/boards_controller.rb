@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :login_check, only: [:index]
+  before_action :login_check
   def index
     @boards = Board.all.includes(:user)
   end
