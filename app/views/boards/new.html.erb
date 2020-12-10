@@ -13,6 +13,10 @@
           <%= f.label :body, Board.human_attribute_name(:body) %>
           <%= f.text_area :body, class: 'form-control', row: '10', style: 'height: 200px'%>
         </div>
+        <div class="form-group">
+          <%= f.label :board_image, Board.human_attribute_name(:board_image) %>
+          <%= f.file_field :board_image, class: 'form-control' %>
+        </div>
         <%= f.submit (t '.create'), class: "btn btn-primary", data: { disable_with: (t '.create')} %>
       <% end %>
     </div>

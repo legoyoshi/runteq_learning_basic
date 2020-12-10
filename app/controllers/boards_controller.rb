@@ -21,7 +21,7 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :body).merge(user_id: current_user.id)
+    params.require(:board).permit(:title, :body, :board_image).merge(user_id: current_user.id)
   end
 
   def login_check
