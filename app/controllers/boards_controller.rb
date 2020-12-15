@@ -8,6 +8,12 @@ class BoardsController < ApplicationController
     @board = Board.new
   end
 
+  def show
+    @board = Board.find(params[:id])
+    @comments = @board.comments.order(id: "DESC").includes(:user)
+    @comment = Comment.new
+  end
+
   def create
     @board = Board.new(board_params)
     if @board.save
@@ -21,7 +27,7 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :body, :board_image).merge(user_id: current_user.id)
+    params.require(:board).permit(:title, :body, :board_image, :board_image_cache).merge(user_id: current_user.id)
   end
 
   def login_check

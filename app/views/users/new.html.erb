@@ -6,23 +6,23 @@
         <%= render 'shared/error_messages', model: @user %>
 
         <div class="form-group">
-          <%= f.label :last_name, User.human_attribute_name(:last_name) %>
+          <%= f.label :last_name %>
           <%= f.text_field :last_name, class: 'form-control'%>
         </div>
         <div class="form-group">
-          <%= f.label :first_name, User.human_attribute_name(:first_name) %>
+          <%= f.label :first_name %>
           <%= f.text_field :first_name, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :email, User.human_attribute_name(:email) %>
+          <%= f.label :email %>
           <%= f.email_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :password, User.human_attribute_name(:password) %>
+          <%= f.label :password %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation)%>
+          <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
         <%= f.submit (t 'defaults.register'), class: "btn btn-primary", data: { disable_with: (t 'defaults.register')} %>
