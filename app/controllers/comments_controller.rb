@@ -2,9 +2,9 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_back_or_to(board_path(id: @comment.board_id), success: (t 'flash.comment_create_success'))
+      redirect_back_or_to(board_path(@comment.board), success: (t 'flash.comment_create_success'))
     else
-      redirect_back_or_to(board_path(id: @comment.board_id), danger: (t 'flash.comment_create_failed'))
+      redirect_back_or_to(board_path(@comment.board), danger: (t 'flash.comment_create_failed'))
     end
   end
 

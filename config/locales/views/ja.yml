@@ -20,6 +20,8 @@ ja:
       create: '登録する'
     show:
       title: '掲示板詳細'
+    index:
+      title: '掲示板一覧'
   flash:
     login_request: 'ログインしてください'
     login_success: 'ログインしました'

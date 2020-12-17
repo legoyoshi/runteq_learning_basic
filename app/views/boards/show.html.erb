@@ -1,3 +1,4 @@
+<% content_for(:title, @board.title ) %>
 <div class="container pt-5">
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
@@ -17,14 +18,16 @@
               </ul>
             </div>
           </div>
-          <p><%= @board.body %></p>
+          <p><%= simple_format(@board.body) %></p>
         </div>
       </article>
     </div>
   </div>
 
+  <!-- コメントフォーム -->
   <%= render 'comments/form' %>
 
+  <!-- コメントエリア -->
   <%= render 'comments/comment' %>
 
 </div>
