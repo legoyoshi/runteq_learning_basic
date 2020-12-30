@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
       <h1><%= t '.title' %></h1>
-      <%= render 'form' %>
+      <%= render partial: 'form', locals: { action: 'edit' } %>
     </div>
   </div>
 </div>

@@ -19,5 +19,9 @@
             id: 'preview',
             size: '300x200' %>
   </div>
-  <%= f.submit (t '.create'), class: "btn btn-primary", data: { disable_with: (t '.create')} %>
+  <% if action == 'new' %>
+    <%= f.submit (t '.create'), class: "btn btn-primary", data: { disable_with: (t '.create')} %>
+  <% else %>
+    <%= f.submit (t '.update'), class: "btn btn-primary", data: { disable_with: (t '.update')} %>
+  <% end %>
 <% end %>
