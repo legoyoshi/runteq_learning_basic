@@ -25,12 +25,10 @@ class BoardsController < ApplicationController
     end
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def update
-    if @board.update_attributes(board_params)
+    if @board.update(board_params)
       redirect_back_or_to(board_path(@board), success: (t 'flash.board_update_success'))
     else
       flash.now[:danger] = (t 'flash.board_update_failed')

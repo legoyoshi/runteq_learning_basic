@@ -26,7 +26,7 @@ ja:
       title: '掲示板編集'
       create: '更新'
     form:
-      create: '登録'
+      create: '登録する'
   flash:
     login_request: 'ログインしてください'
     login_success: 'ログインしました'
