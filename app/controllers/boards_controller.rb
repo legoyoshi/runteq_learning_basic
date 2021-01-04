@@ -41,6 +41,11 @@ class BoardsController < ApplicationController
     redirect_back_or_to(boards_path, success: (t 'flash.board_destroy_success'))
   end
 
+  def bookmarks
+    @boards = current_user.bookmark_boards.includes(:user)
+    render 'index'
+  end
+
   private
 
   def set_board
@@ -55,9 +60,5 @@ class BoardsController < ApplicationController
     return unless current_user.nil?
 
     redirect_back_or_to(login_path, danger: (t 'flash.login_request'))
-  end
-
-  def bookmarks
-    @boards = current_user.bookmark_boards.includes(:user).recent
   end
 end

@@ -9,5 +9,4 @@ class Board < ApplicationRecord
   def bookmark_by?(user)
     bookmarks.where(user_id: user.id).exists?
   end
-  
 end
