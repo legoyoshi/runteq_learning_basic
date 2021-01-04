@@ -42,6 +42,8 @@ ja:
     board_destroy_success: '掲示板を削除しました'
     comment_create_success: 'コメントを作成しました'
     comment_create_failed: 'コメントを作成できませんでした'
+    bookmarked: 'ブックマークしました'
+    unbookmarked: 'ブックマークを外しました'
   time:
     formats:
       default: "%Y/%m/%d %H:%M"

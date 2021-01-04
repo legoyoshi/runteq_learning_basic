@@ -56,4 +56,8 @@ class BoardsController < ApplicationController
 
     redirect_back_or_to(login_path, danger: (t 'flash.login_request'))
   end
+
+  def bookmarks
+    @boards = current_user.bookmark_boards.includes(:user).recent
+  end
 end
