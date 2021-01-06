@@ -15,4 +15,13 @@ class User < ApplicationRecord
   def own_board?(board)
     id == board.user_id
   end
+
+  def bookmark(board)
+    bookmark_boards << board
+  end
+
+  #  ブックマークを解除する
+  def unbookmark(board)
+    bookmark_boards.destroy(board)
+  end
 end

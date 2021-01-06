@@ -1,12 +1,13 @@
 class BookmarksController < ApplicationController
   def create
-    @bookmark = current_user.bookmarks.build(board_id: params[:board_id])
-    @bookmark.save!
-    redirect_back_or_to(request.referer, success: t('flash.bookmarked'))
+    @board = Board.find(params[:board_id])
+    current_user.bookmark(@board)
+    # redirect_back_or_to(request.referer, success: t('flash.bookmarked'))
   end
 
   def destroy
-    current_user.bookmarks.find_by(board_id: params[:board_id]).destroy!
-    redirect_back_or_to(request.referer, success: t('flash.unbookmarked'))
+    @board = current_user.bookmark_boards.find(params[:board_id])
+    current_user.unbookmark(@board)
+    # redirect_back_or_to(request.referer, success: t('flash.unbookmarked'))
   end
 end

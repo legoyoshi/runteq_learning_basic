@@ -43,7 +43,6 @@ class BoardsController < ApplicationController
 
   def bookmarks
     @boards = current_user.bookmark_boards.includes(:user)
-    render 'index'
   end
 
   private
