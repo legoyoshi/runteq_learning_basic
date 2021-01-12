@@ -24,10 +24,11 @@
       </li>
       <li class="list-inline-item">
         <%= link_to icon('fas', 'trash'),
-            comment_path(comment),
-            method: :delete,
-            remote: true,
-            class: :"js-delete-comment-button" %>
+        comment_path(comment),
+        method: :delete,
+        remote: true,
+        class: :"js-delete-comment-button",
+        data: { confirm: '削除してよろしいですか？' } %>
       </li>
       <% end %>
     </ul>
