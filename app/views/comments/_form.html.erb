@@ -1,7 +1,7 @@
 <div class="row mb-3">
   <div class="col-lg-8 offset-lg-2">
-    <%= form_with(model: [@board, @comment], local: true) do |f| %>
-      <%= render 'shared/error_messages', model: @comment %>
+    <%= form_with(model: [@board, @comment], remote: true) do |f| %>
+      <div id="error_explanation"></div>
       <div class="form-group">
         <%= f.label :body %>
         <%= f.text_area :body, row: '2', class: 'form-control mb-1', placeholder: 'コメント'%>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete  '/logout',    to: 'user_sessions#destroy'
   resources :users, only: %i[new create]
   resources :boards do
-    resources :comments, only: [:create], shallow: true
+    resources :comments, only: %i[create destroy], shallow: true
     resource :bookmarks, only: %i[create destroy]
     collection do
       get 'bookmarks'

@@ -1,0 +1,7 @@
+<% if @comment.errors.any? %>
+  $('#error_explanation').prepend("<%= j(render 'error',{ comment: @comment }) %>");
+<% else %>
+  $('#error_explanation').remove()
+  $('#js-table-comment').prepend("<%= j(render 'comment',{ comment: @comment }) %>");
+  $('#comment_body').val('')
+<% end %>

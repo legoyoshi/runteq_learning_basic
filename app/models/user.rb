@@ -16,6 +16,10 @@ class User < ApplicationRecord
     id == board.user_id
   end
 
+  def own_comment?(comment)
+    id == comment.user_id
+  end
+
   def bookmark(board)
     bookmark_boards << board
   end

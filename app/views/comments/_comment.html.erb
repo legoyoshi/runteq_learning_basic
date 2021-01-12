@@ -1,45 +1,35 @@
-<div class="row">
-  <div class="col-lg-8 offset-lg-2">
-    <table id="js-table-comment" class="table">
-      <% if @comments.exists? %>
-        <% @comments.each do |c| %>
-          <tr id="comment-<%= c.id %>">
-            <td style="width: 60px">
-              <%= image_tag 'sample.jpg', class: 'rounded-circle mr15', width:'50', height:'50' %>
-            </td>
-            <td>
-              <h3 class="small"><%= c.user.decorate.full_name %></h3>
-              <div id="js-comment-<%= c.id %>">
-                <p><%= c.body %></p>
-              </div>
-              <div style="display: none;">
-                <textarea class="form-control mb-1">コメントです</textarea>
-                <button class="btn btn-light">キャンセル</button>
-                <button class="btn btn-success">更新</button>
-              </div>
-            </td>
+<tr id="comment-<%= comment.id %>">
+  <td style="width: 60px">
+    <%= image_tag 'sample.jpg', class: 'rounded-circle mr15', width:'50', height:'50' %>
+  </td>
+  <td>
+    <h3 class="small"><%= comment.user.decorate.full_name %></h3>
+    <div id="js-comment-<%= comment.id %>">
+      <p><%= comment.body %></p>
+    </div>
+    <div style="display: none;">
+      <textarea class="form-control mb-1">コメントです</textarea>
+      <button class="btn btn-light">キャンセル</button>
+      <button class="btn btn-success">更新</button>
+    </div>
+  </td>
 
-            <td class="action">
-              <ul class="list-inline justify-content-center" style="float: right;">
-                <% if c.user == current_user %>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class='fa fa-pencil-alt'></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-trash-alt"></i>
-                  </a>
-                </li>
-                <% end %>
-              </ul>
-            </td>
-          </tr>
-        <% end %>
-      <% else %>
-        <p>コメントがありません。</p>
+  <td class="action">
+    <ul class="list-inline justify-content-center" style="float: right;">
+      <% if current_user.own_comment?(comment) %>
+      <li class="list-inline-item">
+        <a href="#">
+          <i class='fa fa-pencil-alt'></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <%= link_to icon('fas', 'trash'),
+            comment_path(comment),
+            method: :delete,
+            remote: true,
+            class: :"js-delete-comment-button" %>
+      </li>
       <% end %>
-    </table>
-  </div>
-</div>
+    </ul>
+  </td>
+</tr>

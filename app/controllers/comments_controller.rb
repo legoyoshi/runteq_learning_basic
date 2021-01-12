@@ -1,11 +1,12 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(comment_params)
-    if @comment.save
-      redirect_back_or_to(board_path(@comment.board), success: (t 'flash.comment_create_success'))
-    else
-      redirect_back_or_to(board_path(@comment.board), danger: (t 'flash.comment_create_failed'))
-    end
+    @comment = current_user.comments.build(comment_params)
+    @comment.save
+  end
+
+  def destroy
+    @comment = current_user.comments.find(params[:id])
+    @comment.destroy!
   end
 
   private
