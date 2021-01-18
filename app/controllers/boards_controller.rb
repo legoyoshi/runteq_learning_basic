@@ -1,8 +1,11 @@
 class BoardsController < ApplicationController
   before_action :login_check
   before_action :set_board, only: %i[edit update destroy]
+
+  PER = 20
+
   def index
-    @boards = Board.all.includes(:user)
+    @boards = Board.all.includes(:user).page(params[:page]).per(PER)
   end
 
   def new
@@ -42,7 +45,7 @@ class BoardsController < ApplicationController
   end
 
   def bookmarks
-    @boards = current_user.bookmark_boards.includes(:user)
+    @boards = current_user.bookmark_boards.includes(:user).page(params[:page]).per(PER)
   end
 
   private
