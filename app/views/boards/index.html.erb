@@ -3,11 +3,11 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
       <!-- 検索フォーム -->
-      <form>
-        <div class="input-group mb-3"><input class="form-control" placeholder="検索ワード" type="search"/>
-          <div class="input-group-append"><input type="submit" value="検索" class="btn btn-primary"/></div>
+      <%= search_form_for @q do |f| %>
+        <div class="input-group mb-3"><%= f.text_field :title_or_body_cont, class:"form-control", placeholder:"検索ワード" %>
+          <div class="input-group-append"><%= f.submit '検索', class:"btn btn-primary" %></div>
         </div>
-      </form>
+      <% end %>
     </div>
   </div>
   <!-- 掲示板一覧 -->

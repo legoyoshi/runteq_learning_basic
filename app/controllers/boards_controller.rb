@@ -5,7 +5,9 @@ class BoardsController < ApplicationController
   PER = 20
 
   def index
-    @boards = Board.all.includes(:user).page(params[:page]).per(PER)
+    @q = Board.ransack(params[:q])
+    @boards = @q.result.includes(:user).page(params[:page]).per(PER)
+    # @boards = Board.all.includes(:user).page(params[:page]).per(PER)
   end
 
   def new
@@ -45,7 +47,8 @@ class BoardsController < ApplicationController
   end
 
   def bookmarks
-    @boards = current_user.bookmark_boards.includes(:user).page(params[:page]).per(PER)
+    @q = current_user.bookmark_boards.ransack(params[:q])
+    @boards = @q.result.includes(:user).page(params[:page]).per(PER)
   end
 
   private
