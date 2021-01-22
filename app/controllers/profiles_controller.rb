@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     if @user.update(user_params)
       redirect_back_or_to(profile_path, success: (t 'flash.user_update_success'))
     else
-      redirect_back_or_to(profile_path, danger: (t 'flash.user_update_failed'))
+      redirect_back_or_to(profile_path, danger: @user.errors.full_messages.first )
     end
   end
 
