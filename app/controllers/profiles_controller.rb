@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     if @user.update(user_params)
       redirect_back_or_to(profile_path, success: (t 'flash.user_update_success'))
     else
-      flash.now[:danger] =  (t 'flash.user_update_failed')
+      flash.now[:danger] = (t 'flash.user_update_failed')
       render 'edit'
     end
   end
