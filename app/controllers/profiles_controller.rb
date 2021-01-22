@@ -12,9 +12,9 @@ class ProfilesController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_back_or_to(profiles_path, success: (t 'flash.board_update_success'))
+      redirect_back_or_to(profile_path, success: (t 'flash.user_update_success'))
     else
-      redirect_back_or_to(profiles_path, danger: (t 'flash.board_update_failed'))
+      redirect_back_or_to(profile_path, danger: (t 'flash.user_update_failed'))
     end
   end
 
