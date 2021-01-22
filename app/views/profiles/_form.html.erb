@@ -1,0 +1,28 @@
+<%= form_with url: profiles_path, model: @user, local: true do |f| %>
+  <%= render 'shared/error_messages', model: @user %>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :avatar_image %>
+    <%= f.file_field :avatar_image, onchange: 'previewImage()', class: 'form-control', accept: 'image/*' %>
+    <%= f.hidden_field :avatarimage_cache %>
+  </div>
+  <div class="fmt-3 mb-3">
+    <%= image_tag @user.avatar_image.url,
+            id: 'preview',
+            size: '100x100',
+            class: 'rounded-circle mr15' %>
+  </div>
+  <%= f.submit (t 'profiles.edit.update'), class: "btn btn-primary", data: { disable_with: (t 'profiles.edit.update')} %>
+<% end %>

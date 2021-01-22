@@ -28,6 +28,14 @@ ja:
     form:
       create: '登録する'
       update: '更新する'
+    bookmarks:
+      title: 'ブックマーク一覧'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+      update: '更新する'
   flash:
     login_request: 'ログインしてください'
     login_success: 'ログインしました'
@@ -40,6 +48,8 @@ ja:
     board_update_success: '掲示板を更新しました'
     board_update_failed: '掲示板を更新できませんでした'
     board_destroy_success: '掲示板を削除しました'
+    user_update_success: 'ユーザーを更新しました'
+    user_update_failed: 'ユーザーを更新できませんでした'
     comment_create_success: 'コメントを作成しました'
     comment_create_failed: 'コメントを作成できませんでした'
     bookmarked: 'ブックマークしました'
