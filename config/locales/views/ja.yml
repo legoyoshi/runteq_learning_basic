@@ -5,6 +5,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     post: '投稿'
+    submit: '送信'
   users:
     new:
       title: 'ユーザー登録'
@@ -30,6 +31,11 @@ ja:
       update: '更新する'
     bookmarks:
       title: 'ブックマーク一覧'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+    edit:
+      title: 'パスワードリセット'
   profiles:
     show:
       title: 'プロフィール'
@@ -52,6 +58,9 @@ ja:
     user_update_failed: 'ユーザーを更新できませんでした'
     comment_create_success: 'コメントを作成しました'
     comment_create_failed: 'コメントを作成できませんでした'
+    password_reset_request_success: 'パスワードリセット手順を送信しました'
+    password_reset_success: 'パスワードを変更しました'
+    password_reset_failed: 'パスワードを変更できませんでした'
     bookmarked: 'ブックマークしました'
     unbookmarked: 'ブックマークを外しました'
   time:
