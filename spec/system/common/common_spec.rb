@@ -99,6 +99,22 @@ RSpec.describe '共通系', type: :system do
           expect(page).to have_title('プロフィール編集'), 'プロフィール編集ページのタイトルに「プロフィール編集」が含まれていません'
         end
       end
+
+      describe 'パスワードリセット申請ページ' do
+        it '正しいタイトルが表示されていること' do
+          visit new_password_reset_path
+          expect(page).to have_title('パスワードリセット申請'), 'パスワードリセット申請ページのタイトルに「パスワードリセット申請」が含まれていません'
+        end
+      end
+
+      describe 'パスワードリセットページ' do
+        it '正しいタイトルが表示されていること' do
+          user = create(:user)
+          user.generate_reset_password_token!
+          visit edit_password_reset_url(user.reset_password_token)
+          expect(page).to have_title('パスワードリセット'), 'パスワードリセットページのタイトルに「パスワードリセット」が含まれていません'
+        end
+      end
     end
   end
 end
