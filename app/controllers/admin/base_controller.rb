@@ -5,6 +5,6 @@ class Admin::BaseController < ApplicationController
   private
 
   def check_admin
-    redirect_to root_path, warning: '権限がありません' unless current_user.status?
+    redirect_back_or_to root_path, warning: '権限がありません' unless !current_user.nil? && current_user.admin?
   end
 end
