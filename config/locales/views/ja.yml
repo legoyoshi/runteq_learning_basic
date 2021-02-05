@@ -42,6 +42,13 @@ ja:
     edit:
       title: 'プロフィール編集'
       update: '更新する'
+  admin:
+    dashboards:
+      index:
+        title: 'ダッシュボード'
+    user_sessions:
+      new:
+        title: 'ログイン'
   flash:
     login_request: 'ログインしてください'
     login_success: 'ログインしました'
