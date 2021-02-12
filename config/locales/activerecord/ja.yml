@@ -1,5 +1,10 @@
 
 ja:
+  enums:
+    user:
+      role:
+        general: '一般'
+        admin: '管理者'
   activerecord:
     models:
       user: 'ユーザー'

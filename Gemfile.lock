@@ -89,6 +89,8 @@ GEM
       activemodel-serializers-xml (>= 1.0)
       activesupport (>= 5.0)
       request_store (>= 1.0)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erubi (1.8.0)
     execjs (2.7.0)
     factory_bot (5.0.2)
@@ -331,6 +333,7 @@ DEPENDENCIES
   capybara
   carrierwave
   draper
+  enum_help
   factory_bot_rails
   faker
   font-awesome-sass

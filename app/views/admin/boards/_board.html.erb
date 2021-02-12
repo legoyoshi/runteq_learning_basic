@@ -1,10 +1,10 @@
 <div class="col-sm-12 col-lg-4 mb-3">
-  <div id="board-id-<%= board.id %>">
+  <div id="board-id-1">
     <div class="card">
       <%= image_tag board.board_image.url, class: 'card-img-top img-fluid', size: '300x200' %>
       <div class="card-body">
-        <h4>
-          <%= link_to board.title, board_path(board) %>
+        <h4 class="card-title">
+          <a href="#"><%= link_to board.title, board_path(board) %></a>
         </h4>
         <% if current_user.own_board?(board) %>
           <div style='display: inline; float: right;'>
@@ -17,14 +17,8 @@
           </div>
         <% end %>
         <ul class="list-inline">
-          <li class="list-inline-item">
-            <%= icon 'far', 'user' %>
-            <%= board.user.decorate.full_name %>
-          </li>
-          <li class="list-inline-item">
-            <%= icon 'far', 'calendar' %>
-            <%= l board.created_at %>
-          </li>
+          <li class="list-inline-item"><i class="far fa-user"></i> <%= board.decorate.full_name %></li>
+          <li class="list-inline-item"><i class="far fa-calendar"></i> <%= l (board.created_at) %></li>
         </ul>
         <p class="card-text"><%= board.body %></p>
       </div>

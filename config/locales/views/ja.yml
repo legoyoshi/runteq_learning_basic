@@ -49,6 +49,21 @@ ja:
     user_sessions:
       new:
         title: 'ログイン'
+    users:
+      index:
+        title: 'ユーザー一覧'
+      edit:
+        title: 'ユーザー編集'
+    boards:
+      index:
+        title: '掲示板一覧'
+      show:
+        title: '掲示板詳細'
+      edit:
+        title: '掲示板編集'
+      form:
+        create: '登録する'
+        update: '更新する'
   flash:
     login_request: 'ログインしてください'
     login_success: 'ログインしました'
@@ -63,6 +78,7 @@ ja:
     board_destroy_success: '掲示板を削除しました'
     user_update_success: 'ユーザーを更新しました'
     user_update_failed: 'ユーザーを更新できませんでした'
+    user_destroy_success: 'ユーザーを削除しました'
     comment_create_success: 'コメントを作成しました'
     comment_create_failed: 'コメントを作成できませんでした'
     password_reset_request_success: 'パスワードリセット手順を送信しました'

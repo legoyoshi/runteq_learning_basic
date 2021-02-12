@@ -1,0 +1,41 @@
+<% content_for(:title, (t '.title') ) %>
+<%= render 'shared/flash_message' %>
+
+<h1><%= t '.title' %></h1>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-lg-4 offset-lg-1">
+      <!-- 検索フォーム -->
+      <%= search_form_for(@q, url: admin_users_path, local: true) do |f| %>
+        <div class="input-group mb-3">
+          <%= f.text_field :last_name_or_first_name_cont, class:"form-control", placeholder:"検索ワード" %>
+          <%= f.select :role_eq, [['一般', 0], ['管理者', 1]], {include_blank: '選択なし'}, class: 'form-control' %>
+          <div class="input-group-append"><%= f.submit '検索', class:"btn btn-primary" %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- 掲示板一覧 -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>名前</th>
+        <th>権限</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= link_to user.decorate.full_name, admin_user_path(user) %></td>
+        <td><%= user.role_i18n %></td>
+        <td>
+          <%= link_to "編集", edit_admin_user_path(user), class:"btn  btn-success" %>
+          <%= link_to "削除", admin_user_path(user), class: "btn btn-danger", method: :delete, data: { confirm: '削除してよろしいですか？' } %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
