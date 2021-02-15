@@ -23,18 +23,37 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
 
-        <li class="nav-item">
-          <%= link_to admin_boards_path, class: 'nav-link' do %>
-            <i class="nav-icon fas fa-th"></i>
-            <p>掲示板一覧</p>
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to admin_users_path, class: 'nav-link' do %>
-            <i class="nav-icon fas fa-th"></i>
-            <p>ユーザー一覧</p>
-          <% end %>
-        </li>
+        <% if controller.controller_name == 'boards' %>
+          <li class="nav-item">
+            <%= link_to admin_boards_path, class: 'nav-link active' do %>
+              <i class="nav-icon fas fa-th"></i>
+              <p>掲示板一覧</p>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to admin_boards_path, class: 'nav-link' do %>
+              <i class="nav-icon fas fa-th"></i>
+              <p>掲示板一覧</p>
+            <% end %>
+          </li>
+        <% end %>
+
+        <% if controller.controller_name == 'users' %>
+          <li class="nav-item">
+            <%= link_to admin_users_path, class: 'nav-link active' do %>
+              <i class="nav-icon fas fa-th"></i>
+              <p>ユーザー一覧</p>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to admin_users_path, class: 'nav-link' do %>
+              <i class="nav-icon fas fa-th"></i>
+              <p>ユーザー一覧</p>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

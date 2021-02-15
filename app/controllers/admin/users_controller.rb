@@ -1,5 +1,4 @@
 class Admin::UsersController < Admin::BaseController
-
   def index
     @q = User.ransack(params[:q])
     @users = @q.result(distinct: true)
@@ -34,5 +33,4 @@ class Admin::UsersController < Admin::BaseController
   def user_params
     params.require(:user).permit(:last_name, :first_name, :email, :avatar_image, :avatar_image_cache)
   end
-
 end
