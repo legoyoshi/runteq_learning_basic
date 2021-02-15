@@ -16,7 +16,7 @@ class Admin::BoardsController < Admin::BaseController
 
   def update
     if @board.update(board_params)
-      redirect_back_or_to(admin_boards_path, success: (t 'flash.board_update_success'))
+      redirect_back_or_to(admin_board_path(@board), success: (t 'flash.board_update_success'))
     else
       flash.now[:danger] = (t 'flash.board_update_failed')
       render 'edit'

@@ -15,7 +15,7 @@ class Admin::UsersController < Admin::BaseController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_back_or_to(admin_users_path, success: (t 'flash.user_update_success'))
+      redirect_back_or_to(admin_user_path(@user), success: (t 'flash.user_update_success'))
     else
       flash.now[:danger] = (t 'flash.user_update_failed')
       render 'edit'
