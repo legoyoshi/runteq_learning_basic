@@ -5,8 +5,8 @@ class BoardsController < ApplicationController
   PER = 20
 
   def index
-    @q = Board.ransack(params[:q])
-    @boards = @q.result.includes(:user).page(params[:page]).per(PER)
+    # @q = Board.ransack(params[:q])
+    # @boards = @q.result.includes(:user).page(params[:page]).per(PER)
     # @boards = Board.all.includes(:user).page(params[:page]).per(PER)
   end
 
