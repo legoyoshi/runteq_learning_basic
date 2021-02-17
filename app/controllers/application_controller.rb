@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
     render file: Rails.root.join('public', '404.html'), status: :not_found, layout: false
   end
 
-  def render_500(e)
-    logger.error(e.message)
-    logger.error(e.backtrace.join("\n"))
-    ExceptionNotifier.notify_exception(e, :env => request.env, :data => {:message => "error"})
+  def render_500(error)
+    logger.error(error.message)
+    logger.error(error.backtrace.join("\n"))
+    ExceptionNotifier.notify_exception(error, env: request.env, data: { message: 'error' })
     render file: Rails.root.join('public', '500.html'), status: :internal_server_error, layout: false
   end
 end
